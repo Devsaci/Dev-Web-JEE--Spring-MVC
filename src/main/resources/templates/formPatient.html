@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="template1">
+<head>
+<meta charset="utf-8">
+<title>Formulaire Patients</title>
+</head>
+<body>
+
+	<div layout:fragment="pageContent">
+		<div class="container mt-5">
+			<!-- 		formulaire Name patient -->
+			<form th:action="@{savePatient}" method="post">
+				<div class="form-group">
+					<label class="control-label">Name</label> <input type="text"
+						name="name" class="form-control" th:value="${patient.name}"> 
+						<span th:errors=${patient.name}></span>
+				</div>
+				<!-- 		formulaire dateNaissance patient -->
+				<div class="form-group">
+					<label class="control-label">Date Naissance</label> <input
+						type="date" name="dateNaissance" class="form-control" 
+						th:value="${patient.dateNaissance}"> 
+						<span th:errors=${patient.dateNaissance}></span>
+				</div>
+				<!-- 		formulaire malade patient -->
+				<div class="form-group">
+					 <div class="custom-control custom-checkbox">
+					<input type="checkbox" name="malade" th:checked="${patient.malade}" class="custom-control-input"
+						id="customCheck1" > <label class="custom-control-label"
+						for="customCheck1">malade Check this custom checkbox</label>
+						<span th:errors=${patient.malade}></span>
+						
+					</div> 
+					
+					<!--  <label class="control-label">malade</label> 
+					<input type="checkbox" name="malade" th:value="${patient.malade}"> 
+					<span></span>  -->
+				</div>
+
+			
+				<button class="btn btn-success" type="submit">Enregistrer</button>
+			</form>
+		</div>
+
+		<!-- 		formulaire Bt4 -->
+		<div class="container mt-5">
+			<a>/*/*/*/*/*/*/*/*/*/*/*</a>
+		</div>
+	</div>
+
+</body>
+</html>
