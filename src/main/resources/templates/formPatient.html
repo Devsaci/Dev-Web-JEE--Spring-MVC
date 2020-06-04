@@ -15,31 +15,30 @@
 				<div class="form-group">
 					<label class="control-label">Name</label> <input type="text"
 						name="name" class="form-control" th:value="${patient.name}"> 
-						<span th:errors=${patient.name}></span>
+						<span th:errors=${patient.name} class="text-danger"></span>
 				</div>
 				<!-- 		formulaire dateNaissance patient -->
 				<div class="form-group">
 					<label class="control-label">Date Naissance</label> <input
 						type="date" name="dateNaissance" class="form-control" 
 						th:value="${patient.dateNaissance}"> 
-						<span th:errors=${patient.dateNaissance}></span>
+						<span th:errors=${patient.dateNaissance} class="text-danger"></span>
 				</div>
-				<!-- 		formulaire malade patient -->
 				<div class="form-group">
 					 <div class="custom-control custom-checkbox">
 					<input type="checkbox" name="malade" th:checked="${patient.malade}" class="custom-control-input"
 						id="customCheck1" > <label class="custom-control-label"
 						for="customCheck1">malade Check this custom checkbox</label>
-						<span th:errors=${patient.malade}></span>
-						
-					</div> 
-					
-					<!--  <label class="control-label">malade</label> 
-					<input type="checkbox" name="malade" th:value="${patient.malade}"> 
-					<span></span>  -->
+						<span th:errors=${patient.malade} class="text-danger"></span>						
+					</div> 				
 				</div>
-
-			
+<!-- 		formulaire score patient -->
+							<div class="form-group">
+					<label class="control-label">score</label> <input
+						type="text" name="score" class="form-control" 
+						th:value="${patient.score}"> 
+						<span th:errors=${patient.score} class="text-danger"></span>
+				</div>
 				<button class="btn btn-success" type="submit">Enregistrer</button>
 			</form>
 		</div>

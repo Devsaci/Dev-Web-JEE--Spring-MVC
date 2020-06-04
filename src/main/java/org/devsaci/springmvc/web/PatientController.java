@@ -40,8 +40,7 @@ public class PatientController {
 	@GetMapping(path = "/deletePatient")
 	public String delete(Long id, String keyword, int page, int size) {
 		patientRepository.deleteById(id);
-		return "redirect:/patients?page=" + page + "&size=" + size + 
-				"&keyword=" + keyword;
+		return "redirect:/patients?page=" + page + "&size=" + size + "&keyword=" + keyword;
 	}
 
 	@GetMapping(path = "/deletePatient2")
@@ -55,18 +54,14 @@ public class PatientController {
 		model.addAttribute("patient", new Patient());
 		return "formPatient";
 	}
-	@PostMapping(path = "/savePatient" )
-	public String savePatient(@Valid Patient patient,
-			BindingResult bindingResult				
-		) {
+
+	@PostMapping(path = "/savePatient")
+	public String savePatient(@Valid Patient patient, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
-		return 	"formPatient";
+			return "formPatient";
 		}
 		patientRepository.save(patient);
 		return "redirect:/patients";
 	}
-	
-	
-	
 
 }
