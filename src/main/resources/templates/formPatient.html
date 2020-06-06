@@ -15,7 +15,7 @@
 		<div class="container mt-5">
 			<div class="col-md-6">
 				<div class="card bg-warning text-white">
-<div class="card-header">Formulaire de saisie de nouveau patient</div>
+<div class="card-header" th:if="${mode=='new'}">Formulaire de saisie de nouveau patient</div>
 					<div class="card-body">
 						<!-- 		formulaire Name patient -->
 						<form th:action="@{savePatient}" method="post">

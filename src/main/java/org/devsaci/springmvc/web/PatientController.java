@@ -52,6 +52,7 @@ public class PatientController {
 	@GetMapping(path = "/formPatient")
 	public String formPatient(Model model) {
 		model.addAttribute("patient", new Patient());
+		model.addAttribute("mode", "new");
 		return "formPatient";
 	}
 	
@@ -59,6 +60,7 @@ public class PatientController {
 	public String editPatient(Model model,Long id) {
 		Patient patient=patientRepository.findById(id).get();
 		model.addAttribute("patient", patient);
+		model.addAttribute("mode", "edit");
 		return "/editPatient";
 	}
 
