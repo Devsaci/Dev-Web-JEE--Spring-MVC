@@ -15,10 +15,16 @@
 		<div class="container mt-5">
 			<div class="col-md-6">
 				<div class="card bg-warning text-white">
-<div class="card-header">Formulaire de saisie de nouveau patient</div>
+<div class="card-header">Formulaire de mise à jours de patient</div>
+
 					<div class="card-body">
 						<!-- 		formulaire Name patient -->
 						<form th:action="@{savePatient}" method="post">
+						<div class="form-group">
+								<label class="control-label">ID</label> <input type="hidden"
+									name="id" class="form-control" th:value="${patient.id}">
+<!-- 								<span th:errors=${patient.id} class="text-danger"></span> -->
+							</div>
 							<div class="form-group">
 								<label class="control-label">Name</label> <input type="text"
 									name="name" class="form-control" th:value="${patient.name}">

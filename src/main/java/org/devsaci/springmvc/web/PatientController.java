@@ -54,6 +54,13 @@ public class PatientController {
 		model.addAttribute("patient", new Patient());
 		return "formPatient";
 	}
+	
+	@GetMapping(path = "/editPatient")
+	public String editPatient(Model model,Long id) {
+		Patient patient=patientRepository.findById(id).get();
+		model.addAttribute("patient", patient);
+		return "/editPatient";
+	}
 
 	@PostMapping(path = "/savePatient")
 	public String savePatient(@Valid Patient patient, BindingResult bindingResult) {
