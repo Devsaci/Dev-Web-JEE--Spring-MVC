@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="template1">
+<head>
+<meta charset="utf-8">
+<title>Confirmation</title>
+</head>
+<body>
+
+	<div layout:fragment="pageContent">
+
+
+
+		<div class="container mt-8">
+			<div class="col-md-6">
+				<div class="card bg-warning text-black">
+					<div class="card-header"><h2><strong>Confirmation de saisie de nouveau
+						patient</strong></h2></div>
+					<div class="card-body">
+						<h2>Enregistrement effectué</h2>
+						<div class="form-group">
+						<strong><label>ID</label>
+						<label th:text="${patient.id}">Id Patient</label></strong>    
+						</div>
+						<div class="form-group">
+						<strong><label>Name</label>
+						<label th:text="${patient.name}">Id Patient</label></strong>
+						</div>
+						<div class="form-group">
+						<strong><label>Score</label>
+						<label th:text="${patient.score}">Id Patient</label></strong>
+						</div>
+						<div class="form-group">
+						<strong><label>Malade</label>
+						<label th:text="${patient.malade}">Id Patient</label></strong>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

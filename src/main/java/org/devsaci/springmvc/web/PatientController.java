@@ -43,12 +43,6 @@ public class PatientController {
 		return "redirect:/patients?page=" + page + "&size=" + size + "&keyword=" + keyword;
 	}
 
-	@GetMapping(path = "/deletePatient2")
-	public String delete2(Long id, String keyword, int page, int size, Model model) {
-		patientRepository.deleteById(id);
-		return list(model, page, size, keyword);
-	}
-
 	@GetMapping(path = "/formPatient")
 	public String formPatient(Model model) {
 		model.addAttribute("patient", new Patient());
@@ -61,16 +55,17 @@ public class PatientController {
 		Patient patient=patientRepository.findById(id).get();
 		model.addAttribute("patient", patient);
 		model.addAttribute("mode", "edit");
-		return "/editPatient";
+		return "formPatient";
 	}
 
 	@PostMapping(path = "/savePatient")
-	public String savePatient(@Valid Patient patient, BindingResult bindingResult) {
+	public String savePatient(Model model, @Valid Patient patient, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			return "formPatient";
 		}
 		patientRepository.save(patient);
-		return "redirect:/patients";
+		model.addAttribute("patient", patient);
+		return "confirmation";
 	}
 
 }
