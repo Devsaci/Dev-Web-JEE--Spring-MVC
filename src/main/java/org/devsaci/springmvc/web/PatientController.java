@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -75,14 +76,25 @@ public class PatientController {
 		return "confirmation";
 	}
 
-	/* Reourne une liste Patiens en format JSON */
-	@GetMapping("/listPatients")
-	@ResponseBody
-	public List<Patient> listPatients(){
-		
-		return patientRepository.findAll();
-	}
+	/* Retourne une liste Patients en format JSON */
+	/**
+	 * @return
+	 */
+//	@GetMapping("/listPatients")
+//	@ResponseBody
+//	public List<Patient> listPatients(){
+//		
+//		return patientRepository.findAll();
+//	}
 	
-	
+	/* Retourne un ID  Patient en format JSON 
+	 * {id} PathParam
+	 */
+//	@GetMapping("/patients/{id}")
+//	@ResponseBody
+//	public Patient getOne (@PathVariable Long id){
+//		
+//		return patientRepository.findById(id).get();
+//	}
 
 }
