@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html 	xmlns:th="http://www.thymeLeaf.org" 
-		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-		layout:decorator="template1">
+<html xmlns:th="http://www.thymeLeaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="template1">
 <head>
 <meta charset="utf-8">
 <title>index</title>
 </head>
 <body>
 
-<div layout:fragment="pageContent">
-<div class="container mt-5">
-<h1>Page Index</h1>
+	<div layout:fragment="pageContent">
+		<div class="container mt-5">
+			<h1>HOSPITAL</h1>
+			<img th:src="@{/img/img.jpg}" id="imageAccueil"
+				alt="hôpitaux militaires"
+				title="Les hôpitaux militaires durant la grande guerre" />
+		</div>
 	</div>
-</div>
 
 
-	
+
 
 </body>
 </html>
