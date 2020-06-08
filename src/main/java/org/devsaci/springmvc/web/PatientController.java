@@ -1,5 +1,7 @@
 package org.devsaci.springmvc.web;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.devsaci.springmvc.dao.PatientRepository;
@@ -13,7 +15,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * @author Zakaria
+ *
+ */
 @Controller
 public class PatientController {
 	@Autowired
@@ -67,5 +74,15 @@ public class PatientController {
 		model.addAttribute("patient", patient);
 		return "confirmation";
 	}
+
+	/* Reourne une liste Patiens en format JSON */
+	@GetMapping("/listPatients")
+	@ResponseBody
+	public List<Patient> listPatients(){
+		
+		return patientRepository.findAll();
+	}
+	
+	
 
 }
