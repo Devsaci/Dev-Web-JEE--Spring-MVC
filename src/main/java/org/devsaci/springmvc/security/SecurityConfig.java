@@ -6,24 +6,23 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-public class SecurityConfig extends WebSecurityConfigurerAdapter{
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 
-	  protected void configure(AuthenticationManagerBuilder auth) throws Exception{ 
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("user1").password("{noop}1234").roles("USER");
 		auth.inMemoryAuthentication().withUser("user2").password("{noop}1234").roles("USER");
-		auth.inMemoryAuthentication().withUser("admin").password("{noop}1234").roles("USER","ADMIN");  
-		}
-	 
-	 
+		auth.inMemoryAuthentication().withUser("admin").password("{noop}1234").roles("USER", "ADMIN");
+	}
 
-
-@Override
+	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		http.csrf();
 		http.formLogin()/* .loginPage("/login") */;
-	http.authorizeRequests().anyRequest().authenticated();
-	
-	
+		//http.httpBasic(); //different de formLogin()
+		http.authorizeRequests().antMatchers("/delete**/**","/save**/**").hasRole("ADMIN");
+		http.authorizeRequests().anyRequest().authenticated();
+
 	}
 
 }
