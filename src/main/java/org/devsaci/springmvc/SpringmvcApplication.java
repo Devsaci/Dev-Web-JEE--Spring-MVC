@@ -23,11 +23,11 @@ public class SpringmvcApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		/*
-		 * patientRepository.save(new Patient(null,"Hassan",new Date(),false,8));
-		 * patientRepository.save(new Patient(null,"Mohemed",new Date(),false,10));
-		 * patientRepository.save(new Patient(null,"Samira",new Date(),false,12));
-		 */
+		
+		  patientRepository.save(new Patient(null,"Hassan",new Date(),false,8));
+		  patientRepository.save(new Patient(null,"Mohemed",new Date(),false,10));
+		  patientRepository.save(new Patient(null,"Samira",new Date(),false,12));
+		 
 
 		patientRepository.findAll().forEach(p -> {
 			System.out.println(p.getName());

@@ -65,12 +65,11 @@
 			<version>3.4.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5 -->
-<!-- 		<dependency>
+	<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
-			<version>3.0.4.RELEASE</version>
-		</dependency> -->
-
+			<version>3.0.4.RELEASE</version> 
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
