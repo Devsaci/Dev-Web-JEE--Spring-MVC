@@ -34,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// http.httpBasic(); //different de formLogin()
 		http.authorizeRequests().antMatchers("/delete**/**", "/save**/**","/form**/**").hasRole("ADMIN");
 		http.authorizeRequests().anyRequest().authenticated();
+		http.exceptionHandling().accessDeniedPage("/notAuthorized");
 
 	}
 
