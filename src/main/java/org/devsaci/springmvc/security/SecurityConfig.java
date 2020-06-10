@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf();
 		http.formLogin()/* .loginPage("/login") */;
 		// http.httpBasic(); //different de formLogin()
-		http.authorizeRequests().antMatchers("/delete**/**", "/save**/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers("/delete**/**", "/save**/**","/form**/**").hasRole("ADMIN");
 		http.authorizeRequests().anyRequest().authenticated();
 
 	}
