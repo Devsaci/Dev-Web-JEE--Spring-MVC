@@ -18,7 +18,7 @@
 <div class="card-header" th:if="${mode=='edit'}">Formulaire de mise à jours de patient</div>
 					<div class="card-body">
 						<!-- 		formulaire Name patient -->
-						<form th:action="@{savePatient}" method="post">
+						<fo rm th:action="@{savePatient}" method="post">
 						<div class="form-group">
 								<label class="control-label">ID</label> <input type="hidden"
 									name="id" class="form-control" th:value="${patient.id}">

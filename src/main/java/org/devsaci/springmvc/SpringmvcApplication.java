@@ -8,31 +8,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
-public class SpringmvcApplication implements CommandLineRunner{
+public class SpringmvcApplication implements CommandLineRunner {
 
-	
 	@Autowired
 	private PatientRepository patientRepository;
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringmvcApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		
-		  patientRepository.save(new Patient(null,"Hassan",new Date(),false,8));
-		  patientRepository.save(new Patient(null,"Mohemed",new Date(),false,10));
-		  patientRepository.save(new Patient(null,"Samira",new Date(),false,12));
-		 
-		
-		patientRepository.findAll().forEach(p->{
+		/*
+		 * patientRepository.save(new Patient(null,"Hassan",new Date(),false,8));
+		 * patientRepository.save(new Patient(null,"Mohemed",new Date(),false,10));
+		 * patientRepository.save(new Patient(null,"Samira",new Date(),false,12));
+		 */
+
+		patientRepository.findAll().forEach(p -> {
 			System.out.println(p.getName());
 			System.out.println(p.toString());
-			
+
 		});
+
 	}
+
+	
 
 }
