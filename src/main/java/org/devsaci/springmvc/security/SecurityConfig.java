@@ -29,13 +29,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf();
+		//http.csrf();
 		http.formLogin()/* .loginPage("/login") */;
 		// http.httpBasic(); //different de formLogin()
 		http.authorizeRequests().antMatchers("/delete**/**", "/save**/**","/form**/**").hasRole("ADMIN");
-		http.authorizeRequests().anyRequest().authenticated();
+		//http.authorizeRequests().antMatchers("/patient**/**").hasRole("USER");
+
+		//http.authorizeRequests().anyRequest().authenticated();
 		http.exceptionHandling().accessDeniedPage("/notAuthorized");
 
 	}
 
 }
+
+
+
+
+
+
+
+
+

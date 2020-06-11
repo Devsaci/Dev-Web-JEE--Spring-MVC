@@ -49,7 +49,7 @@
 							,page=${currentPage},size=${size})}">
 									DELLETE</a>
 							</td>
-							<td sec:authorize="hasRole('ROLE_ADMIN')">><a onclick="return confirm('Confirmer Edit')"
+							<td sec:authorize="hasRole('ROLE_ADMIN')"><a onclick="return confirm('Confirmer Edit')"
 								class="btn btn-success"
 								th:href="@{editPatient(id=${p.id},keyword=${keyword}
 							,page=${currentPage},size=${size})}">
